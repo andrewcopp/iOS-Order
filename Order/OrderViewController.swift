@@ -69,12 +69,10 @@ class OrderViewController: UICollectionViewController {
         let updates: () -> Void = {
             self.colors = [UIColor.green, UIColor.blue, UIColor.red]
             
-            collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
+            collectionView.insertItems(at: [IndexPath(item: 0, section: 0)])
             collectionView.reloadItems(at: [IndexPath(item: 1, section: 0)])
-            collectionView.reloadItems(at: [IndexPath(item: 2, section: 0)])
-            collectionView.reloadItems(at: [IndexPath(item: 0, section: 0)])
-            collectionView.reloadItems(at: [IndexPath(item: 2, section: 0)])
-//            collectionView.moveItem(at: IndexPath(item: 0, section: 0), to: IndexPath(item: 2, section: 0))
+            collectionView.deleteItems(at: [IndexPath(item: 2, section: 0)])
+            collectionView.moveItem(at: IndexPath(item: 0, section: 0), to: IndexPath(item: 2, section: 0))
         }
         
         collectionView.performBatchUpdates(updates, completion: nil)
